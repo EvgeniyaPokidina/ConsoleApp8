@@ -7,6 +7,7 @@ int result = egg - breakfast;
 Console.WriteLine(result);
 
 
+
 //Задача 2.// Журнал имеет ширину 25см. Он уже газеты на 16см. Какой ширины газета?
 Console.Write("Ширина журнала в см:");
 int x = int.Parse(Console.ReadLine());
