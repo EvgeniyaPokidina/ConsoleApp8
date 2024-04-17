@@ -73,3 +73,4 @@ Console.WriteLine($"Количество чисел меньше 10: {less10}");
 Console.WriteLine($"Максимальное значение в списке: {max}");
 Console.WriteLine($"Минимальное значение в списке: {min}");
 
+
