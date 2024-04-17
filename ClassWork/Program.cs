@@ -94,3 +94,71 @@
 //    pred=current;
 //    current = pred+temp;
 //}
+
+//Console.Write("Введите текущую температуру по Цельсию:");
+//int n =int.Parse(Console.ReadLine());
+//switch (n)
+//{
+//    case 12: case 1: case 2: Console.WriteLine("Зима"); break;
+//    case 3: case 4: case 5: Console.WriteLine("Весна"); break;
+//    case 6: case 7: case 8: Console.WriteLine("Лето"); break;
+//    case 9: case 10: case 11: Console.WriteLine("Осень"); break;
+//    default: Console.WriteLine("Нет такого месяца"); break;
+//}
+
+
+
+//Console.Write("Введите строку:");
+//string str=Console.ReadLine();
+//for(int i=str.Length-1; i>=0; i--) Console.WriteLine(str[i]);
+
+
+//Console.Write("Введите строку:");
+//string str = Console.ReadLine();
+//string reverse = "";
+//for (int i = str.Length - 1; i >= 0; i--) reverse += str[i];
+//if (str == reverse) Console.WriteLine("Полиндром");
+//else Console.WriteLine("Не полиндром");
+
+//Console.Write("Введите строку:");
+//string str = Console.ReadLine();
+//for (int i=1; i<str.Length;i+=2)
+//    Console.WriteLine(str[i]);
+
+//for (int i = 1; i <= 10; i++)
+//{
+//    for (int j = 1; j <= 10; j++)
+//    {
+//        Console.Write($"{i}*{j}={i*j} ");
+//    }
+//    Console.WriteLine();
+//}
+
+
+//for (int i = 1; i <= 5; i++)
+//{
+//    for (int j = 0; j <= i; j++)
+//    {
+//        Console.Write($"*");
+//    }
+//    Console.WriteLine();
+//}
+
+//for (int i = 5; i >= 1; i--)
+//{
+//    for (int j = 1; j <= i; j++)
+//    {
+//        Console.Write($"*");
+//    }
+//    Console.WriteLine();
+//}
+
+//for (int i = 1; i <= 9; i++)
+//{
+//    for (int j = 1; j <= 9; j++)
+//    {
+//        if (i == 1 && j == 5) Console.Write("*");
+//        else if (i==2&&j>3&&j<7) Console.Write("*");
+//    }
+//    Console.Write($"");
+//}
