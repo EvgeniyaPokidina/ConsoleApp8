@@ -61,3 +61,4 @@ if(n==1 || n==3 || n==5 || n==7 || n==8 || n==10 || n==12)
          else Console.WriteLine($"Поражение. В этом месяце 30 день");
          else if(n==2 &&(m==28 || m==29)) Console.WriteLine("Победа");
          else Console.WriteLine($"Поражение. В этом месяце 28 или 29 дней");
+
