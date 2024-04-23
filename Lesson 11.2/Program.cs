@@ -12,7 +12,7 @@
 
 Console.Write("Введите текущую температуру по Цельсию:");
 double temp = double.Parse(Console.ReadLine());
-if (temp >1 && temp <20) Console.WriteLine("На прогулку можно выпускать медведей, волков и пингвинов");
+if (temp >=1 && temp <19.9) Console.WriteLine("На прогулку можно выпускать медведей, волков и пингвинов");
 if (temp == 20) Console.WriteLine("На прогулку можно выпускать только кенгуру");
 if (temp > 20.1&& temp<=50) Console.WriteLine("На прогулку можно выпускать слонов, жирафов и львов");
 else Console.WriteLine("На прогулку никого нельзя выпускать");
