@@ -39,13 +39,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson 12.1", "Lesson 12.1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson 14.1", "Lesson 14.1\Lesson 14.1.csproj", "{EB2AEEC6-9350-4993-B4AD-91504375C6D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 15.1", "Lesson 15.1\Lesson 15.1.csproj", "{DF2B099C-DF93-4CDA-9B34-37250D8BE798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson 15.1", "Lesson 15.1\Lesson 15.1.csproj", "{DF2B099C-DF93-4CDA-9B34-37250D8BE798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 15.2", "Lesson 15.2\Lesson 15.2.csproj", "{8CB3FCBF-38D6-4BB1-A090-F2CF05A2D035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson 15.2", "Lesson 15.2\Lesson 15.2.csproj", "{8CB3FCBF-38D6-4BB1-A090-F2CF05A2D035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 14.2", "Lesson 14.2\Lesson 14.2.csproj", "{4C565BD8-2716-4FCB-9640-7CFC6DDED8AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson 14.2", "Lesson 14.2\Lesson 14.2.csproj", "{4C565BD8-2716-4FCB-9640-7CFC6DDED8AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 15.3", "Lesson 15.3\Lesson 15.3.csproj", "{F4BA9578-BF3B-461E-B80C-37E34B895600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson 15.3", "Lesson 15.3\Lesson 15.3.csproj", "{F4BA9578-BF3B-461E-B80C-37E34B895600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 15.4", "Lesson 15.4\Lesson 15.4.csproj", "{FB2E068F-1241-48C8-B058-18A0B5414EB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{F4BA9578-BF3B-461E-B80C-37E34B895600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4BA9578-BF3B-461E-B80C-37E34B895600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4BA9578-BF3B-461E-B80C-37E34B895600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2E068F-1241-48C8-B058-18A0B5414EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2E068F-1241-48C8-B058-18A0B5414EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2E068F-1241-48C8-B058-18A0B5414EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2E068F-1241-48C8-B058-18A0B5414EB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
