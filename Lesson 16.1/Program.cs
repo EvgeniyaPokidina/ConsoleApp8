@@ -1,4 +1,4 @@
-﻿string[,] mas1 =
+﻿string[,] masLamp =
 {
     {"","","x","x","",""},    {"","x","x","x","x",""},
     {"x","x","","","x","x"},    {"","x","x","x","x",""},
@@ -10,11 +10,11 @@
 string answer = "no"; bool isChecked = false;
 do
 {
-    Console.Clear(); for (int j = 0; j < mas1.GetUpperBound(0) + 1; j++)
+    Console.Clear(); for (int j = 0; j < masLamp.GetUpperBound(0) + 1; j++)
     {
-        for (int l = 0; l < mas1.GetUpperBound(1) + 1; l++)
+        for (int l = 0; l < masLamp.GetUpperBound(1) + 1; l++)
         {
-             Console.Write($"{mas1[j, l],2}");
+             Console.Write($"{masLamp[j, l],2}");
         }
         Console.WriteLine();
     }
@@ -22,12 +22,12 @@ do
     answer = Console.ReadLine()!; if (answer == "yes") isChecked = !isChecked;
     if (isChecked)
     {
-        mas1[2, 2] = "x"; mas1[2, 3] = "x";
+        masLamp[2, 2] = "x"; masLamp[2, 3] = "x";
     }
     else
     {
-        mas1[2, 2] = "";
-        mas1[2, 3] = "";
+        masLamp[2, 2] = "";
+        masLamp[2, 3] = "";
     }
 }
 while (true);
