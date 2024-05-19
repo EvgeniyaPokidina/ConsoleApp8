@@ -3,30 +3,16 @@
 
 
 Console.Write("Введите 1 число:");
-int a = int.Parse(Console.ReadLine());
+int first = int.Parse(Console.ReadLine());
 Console.Write("Введите 2 число:");
-int b = int.Parse(Console.ReadLine());
+int second = int.Parse(Console.ReadLine());
 Console.Write("Введите оператор:");
-char oper;
-oper=Convert.ToChar(Console.ReadLine());
-
-if (oper == '+')
+string oper= Console.ReadLine();
+switch (oper)
 {
-    Console.WriteLine($"Общая сумма равна {a + b}");
-}
-else if (oper == '-')
-{
-    Console.WriteLine($"Общая сумма равна {a - b}");
-}
-else if (oper == '*')
-{
-    Console.WriteLine($"Общая сумма равна {a * b}");
-}
-else if (oper == '/')
-{
-    Console.WriteLine($"Общая сумма равна {a / b}");
-}
-else
-{
-    Console.WriteLine("Неизвестный оператор");
+    case "+": oper = "+"; Console.WriteLine($"Общая сумма равна {first + second}"); break;
+    case "-": oper = "-"; Console.WriteLine($"Общая сумма равна {first - second}"); break; 
+    case "*": oper = "*"; Console.WriteLine($"Общая сумма равна {first * second}"); break;
+    case "/": oper = "/"; Console.WriteLine($"Общая сумма равна {first / second}"); break;
+    default: Console.WriteLine("Неизвестный оператор"); break;
 }
