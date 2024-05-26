@@ -2,25 +2,19 @@
 string sentence = "";
 string word = "";
 do
-
 {
     Console.Write("Введите слово:");
-    word = Console.ReadLine();
-    for (int i = 0; i < words.Length; i++)
+    word = Console.ReadLine()!;
+    string up = word.ToUpper();
+    if (words.Contains(up))
     {
-        if (word == words[i])
-        {
-            word = "(скрыто)";
-
-            break;
-        }
+        sentence += "скрыто ";
     }
-    sentence += word + " ";
+    else if (word != "конец")
+    {
+        sentence += word + " ";
+    }
 }
 while (word != "конец");
 Console.WriteLine(sentence);
-
-
-
-
 
