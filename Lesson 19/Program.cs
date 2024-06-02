@@ -55,7 +55,7 @@ do
         }
         Console.WriteLine();
 
-       
+        if ( board[0, 0] == board[1, 1] == board[2, 2] ) Console.WriteLine("ПОбеда");
 
     }
     geo = Console.ReadKey().Key;

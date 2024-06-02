@@ -1,6 +1,6 @@
-﻿static char[] board = { '1', '2', '3', '4', '5', '6', '7', '8', '9' }; //stores the variables to change
-static readonly char[] playerMark = { 'x', 'o' };
-static int player = 0;
+﻿char[] board = { '1', '2', '3', '4', '5', '6', '7', '8', '9' }; //stores the variables to change
+char[] playerMark = { 'x', 'o' };
+int player = 0;
 
 static void Main()
 {
