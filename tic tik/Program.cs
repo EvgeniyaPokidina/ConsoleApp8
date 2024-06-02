@@ -1,88 +1,299 @@
-﻿char[] board = { '1', '2', '3', '4', '5', '6', '7', '8', '9' }; //stores the variables to change
-char[] playerMark = { 'x', 'o' };
-int player = 0;
-
-static void Main()
+﻿class Program
 {
-    PrintIntro();
-    PrintBoard();
-    bool playing = true; //stops the game once someone wins
-    while (playing) //is to stop the game once someone wins
+    public static char playerSignature = ' ';
+
+    static int turns = 0; //Will count each turn.  Once == 10 then the game is a draw.
+
+    static char[] ArrBoard =
     {
-        Console.WriteLine($"Player {player + 1}'s turn");
+            '1', '2', '3','4', '5', '6','7', '8', '9'
+        }; //Глобальная переменная массива символов для хранения вводимых игроками данных.
 
-        Console.WriteLine("type in your response: ");
-        if (int.TryParse(Console.ReadLine(), out int playerInput) && playerInput is >= 1 and <= 9)
+
+
+    public static void BoardReset() //Если этот метод вызван, то игра сбрасывается.
+    {
+        char[] ArrBoardInitialize =
         {
-            playerInput--; // Make it a 0-based index.
-            if (board[playerInput] is 'x' or 'o')
-            {
-                Console.WriteLine("Stop stealing other people's place");
-            }
-            else
-            {
-                board[playerInput] = playerMark[player];
-                PrintBoard();
-                if (IsWinCondition())
-                {
-                    playing = false;
-                    Console.WriteLine(
-                        $"Congrats player {player + 1}, better luck next time player {2 - player}");
-                }
-                else if (IsBoardFull())
-                {
-                    playing = false;
-                    Console.WriteLine("The game is a tie");
-                }
-                SwitchPlayer(); // Switch player after printing result.
-            }
-        }
-        else
-        {
-            Console.WriteLine("Please input a valid expression");
-        }
+                '1', '2', '3','4', '5', '6','7', '8', '9'
+            };
+
+        ArrBoard = ArrBoardInitialize;
+        DrawBoard();
+        turns = 0;
     }
-}
 
-private static void SwitchPlayer()
-{
-    player = (player + 1) % 2;
-}
+    public static void DrawBoard()
+    {
+        Console.Clear();
+        Console.WriteLine("  -------------------------");
+        Console.WriteLine("  |       |       |       |");
+        Console.WriteLine("  |   {0}   |   {1}   |   {2}   |", ArrBoard[0], ArrBoard[1], ArrBoard[2]);
+        Console.WriteLine("  |       |       |       |");
+        Console.WriteLine("  -------------------------");
+        Console.WriteLine("  |       |       |       |");
+        Console.WriteLine("  |   {0}   |   {1}   |   {2}   |", ArrBoard[3], ArrBoard[4], ArrBoard[5]);
+        Console.WriteLine("  |       |       |       |");
+        Console.WriteLine("  -------------------------");
+        Console.WriteLine("  |       |       |       |");
+        Console.WriteLine("  |   {0}   |   {1}   |   {2}   |", ArrBoard[6], ArrBoard[7], ArrBoard[8]);
+        Console.WriteLine("  |       |       |       |");
+        Console.WriteLine("  -------------------------");
+    } //Подводит игровое поле к терминалу.
 
-private static void PrintBoard() // makes the board
-{
-    Console.Clear();
+    public static void Introduction()
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine(".-----. _         .-----.             .-----.            ");
+        Console.WriteLine("`-. .-':_;        `-. .-'             `-. .-'            ");
+        Console.WriteLine("  : :  .-. .--.     : : .--.   .--.     : : .--.  .--.   ");
+        Console.WriteLine("  : :  : :'  ..'    : :' .; ; '  ..'    : :' .; :' '_.'  ");
+        Console.WriteLine("  :_;  :_;`.__.'    :_;`.__,_;`.__.'    :_;`.__.'`.__.'  ");
+        Console.ResetColor();
+        Console.WriteLine("\nWelcome to Tic Tac Toe, please press any to begin");
+        Console.ReadKey();
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("RULES");
+        Console.ResetColor();
+        Console.WriteLine("Tic Tac Toe is a two player turn based game." +
+                          "\nIt's you vs your opponent..." +
+                          "\nPress any key to continue");
+        Console.ReadKey();
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("RULES");
+        Console.ResetColor();
+        Console.WriteLine("Players are represented with a unique signature" +
+                          "\nPlayer 1 = O.  Player 2 = X");
+        Console.WriteLine("\nThe first player to score three signatures in a row is the winner" +
+                          "\nGood luck players! \nNow press any key to begin...");
+        Console.ReadKey();
+    } //Этот метод описывает правила игры. Настройка метода направлена на то, чтобы сохранить порядок в коде.
 
-    Console.WriteLine("     |     |      ");
-    Console.WriteLine($"  {board[0]}  |  {board[1]}  |  {board[2]}");
-    Console.WriteLine("_____|_____|_____ ");
-    Console.WriteLine("     |     |      ");
-    Console.WriteLine($"  {board[3]}  |  {board[4]}  |  {board[5]}");
-    Console.WriteLine("_____|_____|_____ ");
-    Console.WriteLine("     |     |      ");
-    Console.WriteLine($"  {board[6]}  |  {board[7]}  |  {board[8]}");
-    Console.WriteLine("     |     |      ");
-}
 
-private static bool IsWinCondition()
-{
-    return
-        board[0] == board[1] && board[1] == board[2] ||
-        board[3] == board[4] && board[4] == board[5] ||
-        board[6] == board[7] && board[7] == board[8] ||
-        board[0] == board[3] && board[3] == board[6] ||
-        board[1] == board[4] && board[4] == board[7] ||
-        board[2] == board[5] && board[5] == board[8] ||
-        board[0] == board[4] && board[4] == board[8] ||
-        board[2] == board[4] && board[4] == board[6];
-}
 
-private static void PrintIntro()
-{
-    ...
-}
+    static void Main(string[] args)
+    {
+        int player = 2; // Player 1 Starts
+        int input = 0;
+        bool inputCorrect = true;
 
-private static bool IsBoardFull()
-{
-    return board.All(square => square > '9');
+        Introduction();
+
+
+        do //Alternates player turns.
+        {
+            if (player == 2)
+            {
+                player = 1;
+                XorO(player, input);
+            }
+            else if (player == 1)
+            {
+                player = 2;
+                XorO(player, input);
+            }
+
+            DrawBoard();
+            turns++;
+
+            //Check Game Status.
+            HorizontalWin();
+            VerticalWin();
+            DiagonalWin();
+
+            if (turns == 10)
+            {
+                Draw();
+            }
+
+            do
+            {
+                Console.WriteLine("\nReady Player {0}: It's your move!", player);
+                try
+                {
+                    input = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Please enter a number!");
+                }
+
+                if ((input == 1) && (ArrBoard[0] == '1'))
+                    inputCorrect = true;
+                else if ((input == 2) && (ArrBoard[1] == '2'))
+                    inputCorrect = true;
+                else if ((input == 3) && (ArrBoard[2] == '3'))
+                    inputCorrect = true;
+                else if ((input == 4) && (ArrBoard[3] == '4'))
+                    inputCorrect = true;
+                else if ((input == 5) && (ArrBoard[4] == '5'))
+                    inputCorrect = true;
+                else if ((input == 6) && (ArrBoard[5] == '6'))
+                    inputCorrect = true;
+                else if ((input == 7) && (ArrBoard[6] == '7'))
+                    inputCorrect = true;
+                else if ((input == 8) && (ArrBoard[7] == '8'))
+                    inputCorrect = true;
+                else if ((input == 9) && (ArrBoard[8] == '9'))
+                    inputCorrect = true;
+                else
+                {
+                    Console.WriteLine("Whoops, I didn't get that.  \nPlease try again...");
+                    inputCorrect = false;
+                }
+
+
+            } while (!inputCorrect);
+        } while (true);
+
+    } //Цикл игрового процесса. Управляет поворотами игроков и переопределяет массив с помощью ввода игроков.
+
+
+
+    public static void XorO(int player, int input)
+    {
+
+        if (player == 1) playerSignature = 'X';
+        else if (player == 2) playerSignature = 'O';
+
+        switch (input)
+        {
+            case 1: ArrBoard[0] = playerSignature; break;
+            case 2: ArrBoard[1] = playerSignature; break;
+            case 3: ArrBoard[2] = playerSignature; break;
+            case 4: ArrBoard[3] = playerSignature; break;
+            case 5: ArrBoard[4] = playerSignature; break;
+            case 6: ArrBoard[5] = playerSignature; break;
+            case 7: ArrBoard[6] = playerSignature; break;
+            case 8: ArrBoard[7] = playerSignature; break;
+            case 9: ArrBoard[8] = playerSignature; break;
+        }
+
+    } //Controls if the player is X or O.
+
+    public static void HorizontalWin()
+    {
+        char[] playerSignatures = { 'X', 'O' };
+
+        foreach (char playerSignatue in playerSignatures)
+        {
+            if (((ArrBoard[0] == playerSignatue) && (ArrBoard[1] == playerSignatue) && (ArrBoard[2] == playerSignatue))
+                || ((ArrBoard[3] == playerSignatue) && (ArrBoard[4] == playerSignatue) && (ArrBoard[5] == playerSignatue))
+                || ((ArrBoard[6] == playerSignatue) && (ArrBoard[7] == playerSignatue) && (ArrBoard[8] == playerSignatue)))
+            {
+                Console.Clear();
+                if (playerSignatue == 'X')
+                {
+                    Console.WriteLine("Congratulations Player 1.\nYou have a achieved a horizontal win! " +
+                                      "\nYou're the Tic Tac Toe Master!\n" +
+                                      "\nTurns taken{0}", turns);
+                }
+                else if (playerSignatue == 'O')
+                {
+                    Console.WriteLine("Congratulations Player 2.\nYou have a achieved a horizontal win! " +
+                                      "\nYou're the Tic Tac Toe Master!\n" +
+                                      "\nTurns taken{0}", turns);
+                }
+
+
+                WinArt();
+                Console.WriteLine("Please press any key to reset the game");
+                Console.ReadKey();
+                BoardReset();
+
+                break;
+            }
+        }
+    } //Method is called to check for a horizontal win.  
+
+    public static void VerticalWin()
+    {
+        char[] playerSignatures = { 'X', 'O' };
+
+        foreach (char playerSignatue in playerSignatures)
+        {
+            if (((ArrBoard[0] == playerSignatue) && (ArrBoard[3] == playerSignatue) && (ArrBoard[6] == playerSignatue))
+                || ((ArrBoard[1] == playerSignatue) && (ArrBoard[4] == playerSignatue) && (ArrBoard[7] == playerSignatue))
+                || ((ArrBoard[2] == playerSignatue) && (ArrBoard[5] == playerSignatue) && (ArrBoard[8] == playerSignatue)))
+            {
+                Console.Clear();
+                if (playerSignatue == 'X')
+                {
+                    Console.WriteLine("Player 1, that was Fantastic.\nA vertical win!\nYou're the Tic Tac Toe Master!\n");
+                }
+                else
+                {
+                    Console.WriteLine("Player 2, that was Fantastic.\nA vertical win!\nYou're the Tic Tac Toe Master!\n");
+                }
+
+                WinArt();
+                Console.WriteLine("Please press any key to reset the game");
+                Console.ReadKey();
+                BoardReset();
+
+                break;
+            }
+        }
+    } //Method is called to check for a vertical win.  
+
+    public static void DiagonalWin()
+    {
+        char[] playerSignatures = { 'X', 'O' };
+
+        foreach (char playerSignatue in playerSignatures)
+        {
+            if (((ArrBoard[0] == playerSignatue) && (ArrBoard[4] == playerSignatue) && (ArrBoard[8] == playerSignatue))
+                || ((ArrBoard[6] == playerSignatue) && (ArrBoard[4] == playerSignatue) && (ArrBoard[2] == playerSignatue)))
+            {
+                Console.Clear();
+                if (playerSignatue == 'X')
+                {
+                    Console.WriteLine("WOW!, player 1 that's a diagonal win! " +
+                                      "\nExcellently played, it's one for the ages! " +
+                                      "\nYou're the Tic Tac Toe Legend!\n \n \n");
+                }
+                else
+                {
+                    Console.WriteLine("WOW!, player 2 that's a diagonal win! " +
+                                      "\nExcellently played, it's one for the ages! " +
+                                      "\nYou're the Tic Tac Toe Legend!\n \n \n");
+                }
+
+                WinArt();
+                Console.WriteLine("Please press any key to reset the game");
+                Console.ReadKey();
+                BoardReset();
+
+                break;
+            }
+        }
+    } //Method is called to check for a diagonal win.
+
+    public static void Draw()
+    {
+
+        {
+            Console.WriteLine("Aw gosh... it's a draw." +
+                              "\nPlease press any key to reset the game and try again!");
+            Console.ReadKey();
+            BoardReset();
+
+        }
+    } //Метод вызывается для проверки того, закончилась ли игра вничью.
+
+    public static void WinArt()
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine(" ÛÛÛÛÛ ÛÛÛÛÛ                        ÛÛÛÛÛ   ÛÛÛ   ÛÛÛÛÛ                     ÛÛÛ ÛÛÛ     ");
+        Console.WriteLine("°°ÛÛÛ °°ÛÛÛ                        °°ÛÛÛ   °ÛÛÛ  °°ÛÛÛ                     °ÛÛÛ°ÛÛÛ     ");
+        Console.WriteLine(" °°ÛÛÛ ÛÛÛ    ÛÛÛÛÛÛ  ÛÛÛÛÛ ÛÛÛÛ    °ÛÛÛ   °ÛÛÛ   °ÛÛÛ   ÛÛÛÛÛÛ  ÛÛÛÛÛÛÛÛ  °ÛÛÛ°ÛÛÛ     ");
+        Console.WriteLine("  °°ÛÛÛÛÛ    ÛÛÛ°°ÛÛÛ°°ÛÛÛ °ÛÛÛ     °ÛÛÛ   °ÛÛÛ   °ÛÛÛ  ÛÛÛ°°ÛÛÛ°°ÛÛÛ°°ÛÛÛ °ÛÛÛ°ÛÛÛ     ");
+        Console.WriteLine("   °°ÛÛÛ    °ÛÛÛ °ÛÛÛ °ÛÛÛ °ÛÛÛ     °°ÛÛÛ  ÛÛÛÛÛ  ÛÛÛ  °ÛÛÛ °ÛÛÛ °ÛÛÛ °ÛÛÛ °ÛÛÛ°ÛÛÛ     ");
+        Console.WriteLine("    °ÛÛÛ    °ÛÛÛ °ÛÛÛ °ÛÛÛ °ÛÛÛ      °°°ÛÛÛÛÛ°ÛÛÛÛÛ°   °ÛÛÛ °ÛÛÛ °ÛÛÛ °ÛÛÛ °°° °°°      ");
+        Console.WriteLine("    ÛÛÛÛÛ   °°ÛÛÛÛÛÛ  °°ÛÛÛÛÛÛÛÛ       °°ÛÛÛ °°ÛÛÛ     °°ÛÛÛÛÛÛ  ÛÛÛÛ ÛÛÛÛÛ ÛÛÛ ÛÛÛ     ");
+        Console.WriteLine("    °°°°°     °°°°°°    °°°°°°°°         °°°   °°°       °°°°°°  °°°° °°°°° °°° °°°     ");
+        Console.ResetColor();
+    } //Настройка оформления в формате ASCII по своему собственному методу помогает поддерживать порядок в коде
 }
