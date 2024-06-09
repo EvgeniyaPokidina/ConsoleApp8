@@ -18,7 +18,6 @@ int Summ(int first, int second)
     return summ;
 }
 Console.WriteLine($"Cумма:  {Summ(first, second)}");
-
 //2
 Random random = new Random();
 int[] mas = new int[10];
