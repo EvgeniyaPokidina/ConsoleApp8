@@ -4,11 +4,29 @@
 //Далее добавьте вывод всех значений массива. каждый одномерный массив выводится построчно в консоль/ Далее выведите сумму каждого одномерного массива
 //*Выведите в конце среднее арифметическое всех значений массива.
 
-Random random = new Random();
+
 int[][] mas = new int[3][];
-for (int i = 0; i < 3; i++) ;
+Random random = new Random();
+double all_summ = 0;
+int count = 0;
+for (int i = 0; i < 3; i++) 
 {
-    for (int j = 0; j < 3; j++) ;
-    
+    int m = random.Next(1, 11);
+    mas[i] = new int[m];
+    int sum = 0;
+    for (int j = 0; j < m; j++)
+    {
+        count++;
+        mas[i][j] = random.Next(11);
+        sum += mas[i][j];
+        all_summ += mas[i][j];
+        Console.Write(mas[i][j] + " ");
+    }
+    Console.Write(" Сумма = " + sum);
+    Console.WriteLine();
 }
-Console.WriteLine();
+all_summ = all_summ / count;
+Console.WriteLine($"Среднее арифметическое всех значений = {all_summ:f2}");
+
+
+
