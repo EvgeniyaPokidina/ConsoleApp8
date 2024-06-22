@@ -2,7 +2,7 @@
 Console.WriteLine(path);
 Console.Write("Введите название папки для перехода:");
 string destination = Console.ReadLine()!;
-path += $"\\{destination}";
+path += $"{destination}";
 if (Directory.Exists(destination))
 {
     DirectoryInfo dir = new DirectoryInfo(destination);
@@ -10,10 +10,8 @@ if (Directory.Exists(destination))
 }
 else
 {
-    Console.WriteLine("Папки не существует");
+    Console.WriteLine("Такой папки не существует");
 }
-//DirectoryInfo directory = new DirectoryInfo(destination);
-//if (directory.Exists)
-//{
-//    Console.WriteLine(directory.FullName);
-//}
+
+
+
