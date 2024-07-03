@@ -3,11 +3,20 @@
 //Функция должна выводить все нечетные числа от 1 до этого числа не
 //включительно и делать это рекурсивно
 
-Console.Write("Введите число:");
-int n=int.Parse(Console.ReadLine()!);
-void Numbers();
+
+Console.Write("Введите n:");
+int n;
+int.TryParse(Console.ReadLine(), out n);
+
+void NumberOut(int n)
 {
-    int lastNum = 250;
-    int defNum = n;
-    Console.WriteLine(defNum);
+    {
+        if (n == -1) return ;
+        else NumberOut(n - 2);
+         Console.Write(n + " ");
+        
+    }
+
+
 }
+NumberOut(n);
