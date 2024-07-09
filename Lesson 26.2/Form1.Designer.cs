@@ -33,30 +33,33 @@
             checkBoxSum = new CheckBox();
             checkBoxMin = new CheckBox();
             textBoxResult = new TextBox();
-            buttonResult = new Button();
+            buttonCount = new Button();
+            buttonCancel = new Button();
             SuspendLayout();
             // 
             // textBoxFirst
             // 
-            textBoxFirst.Location = new Point(24, 32);
+            textBoxFirst.Location = new Point(19, 32);
             textBoxFirst.Multiline = true;
             textBoxFirst.Name = "textBoxFirst";
-            textBoxFirst.Size = new Size(105, 67);
+            textBoxFirst.Size = new Size(65, 45);
             textBoxFirst.TabIndex = 0;
+            textBoxFirst.TextAlign = HorizontalAlignment.Center;
             // 
             // textBoxSecond
             // 
-            textBoxSecond.Location = new Point(165, 32);
+            textBoxSecond.Location = new Point(113, 32);
             textBoxSecond.Multiline = true;
             textBoxSecond.Name = "textBoxSecond";
-            textBoxSecond.Size = new Size(100, 67);
+            textBoxSecond.Size = new Size(65, 45);
             textBoxSecond.TabIndex = 1;
+            textBoxSecond.TextAlign = HorizontalAlignment.Center;
             // 
             // checkBoxSum
             // 
             checkBoxSum.AutoSize = true;
             checkBoxSum.Font = new Font("Segoe UI", 12F);
-            checkBoxSum.Location = new Point(285, 36);
+            checkBoxSum.Location = new Point(203, 31);
             checkBoxSum.Name = "checkBoxSum";
             checkBoxSum.Size = new Size(102, 25);
             checkBoxSum.TabIndex = 2;
@@ -67,7 +70,7 @@
             // 
             checkBoxMin.AutoSize = true;
             checkBoxMin.Font = new Font("Segoe UI", 12F);
-            checkBoxMin.Location = new Point(285, 70);
+            checkBoxMin.Location = new Point(203, 62);
             checkBoxMin.Name = "checkBoxMin";
             checkBoxMin.Size = new Size(108, 25);
             checkBoxMin.TabIndex = 3;
@@ -76,27 +79,43 @@
             // 
             // textBoxResult
             // 
-            textBoxResult.Location = new Point(28, 131);
+            textBoxResult.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxResult.Location = new Point(19, 107);
             textBoxResult.Multiline = true;
             textBoxResult.Name = "textBoxResult";
-            textBoxResult.Size = new Size(342, 84);
+            textBoxResult.Size = new Size(276, 34);
             textBoxResult.TabIndex = 4;
+            textBoxResult.TextAlign = HorizontalAlignment.Center;
             // 
-            // buttonResult
+            // buttonCount
             // 
-            buttonResult.Location = new Point(30, 250);
-            buttonResult.Name = "buttonResult";
-            buttonResult.Size = new Size(340, 66);
-            buttonResult.TabIndex = 5;
-            buttonResult.Text = "Посчитать";
-            buttonResult.UseVisualStyleBackColor = true;
+            buttonCount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonCount.Location = new Point(19, 167);
+            buttonCount.Name = "buttonCount";
+            buttonCount.Size = new Size(124, 66);
+            buttonCount.TabIndex = 5;
+            buttonCount.Text = "Посчитать";
+            buttonCount.UseVisualStyleBackColor = true;
+            buttonCount.Click += buttonCount_Click;
+            // 
+            // buttonCancel
+            // 
+            buttonCancel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonCancel.Location = new Point(184, 169);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(111, 62);
+            buttonCancel.TabIndex = 6;
+            buttonCancel.Text = "Отмена";
+            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(396, 355);
-            Controls.Add(buttonResult);
+            ClientSize = new Size(307, 297);
+            Controls.Add(buttonCancel);
+            Controls.Add(buttonCount);
             Controls.Add(textBoxResult);
             Controls.Add(checkBoxMin);
             Controls.Add(checkBoxSum);
@@ -116,6 +135,7 @@
         private CheckBox checkBoxSum;
         private CheckBox checkBoxMin;
         private TextBox textBoxResult;
-        private Button buttonResult;
+        private Button buttonCount;
+        private Button buttonCancel;
     }
 }
