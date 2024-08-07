@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Lesson_27._3
 {
-    public static class Numbers
+    public class Numbers
     {
-        public static double CalculateAverage(int[] numbers)
+        public static double CalculateAverage(double[] numbers)
         {
-            if (numbers == null || numbers.Length == 0)
+            if (numbers.Length == 0)
             {
                 return 0;
             }
@@ -24,15 +24,7 @@ namespace Lesson_27._3
             {
                 return false;
             }
-            if (number == 2)
-            {
-                return true;
-            }
-            if (number % 2 == 0)
-            {
-                return false;
-            }
-            for (int i = 3; i <= Math.Sqrt(number); i += 2)
+            for (int i = 2; i <= Math.Sqrt(number); i++)
             {
                 if (number % i == 0)
                 {
@@ -41,21 +33,17 @@ namespace Lesson_27._3
             }
             return true;
         }
-
-        // Метод для проверки, является ли число четным
         public static bool IsEven(int number)
         {
             return number % 2 == 0;
         }
-
-        // Метод для проверки, является ли число нечетным
         public static bool IsOdd(int number)
         {
             return number % 2 != 0;
         }
-
     }
-    }
+}
+    
     
 
 
