@@ -12,16 +12,12 @@ namespace Lesson_27._3
     {
         public double CalculateAverage(int[] numbers)
         {
-            if (numbers == null ||numbers.Length == 0)
-                throw new ArgumentException("Массив чисел не может быть пустым.");
             double sum = 0;
             foreach (int number in numbers)
             {
                 sum += number;
             }
-
             return sum / numbers.Length;
-
         }
         public bool IsPrime(int number)
         {
