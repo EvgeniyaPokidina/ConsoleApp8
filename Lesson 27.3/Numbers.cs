@@ -10,15 +10,20 @@ namespace Lesson_27._3
 {
     public class Numbers
     {
-        public static double CalculateAverage(double[] numbers)
+        public double CalculateAverage(int[] numbers)
         {
-            if (numbers.Length == 0)
+            if (numbers == null ||numbers.Length == 0)
+                throw new ArgumentException("Массив чисел не может быть пустым.");
+            double sum = 0;
+            foreach (int number in numbers)
             {
-                return 0;
+                sum += number;
             }
-            return numbers.Average();
+
+            return sum / numbers.Length;
+
         }
-        public static bool IsPrime(int number)
+        public bool IsPrime(int number)
         {
             if (number <= 1)
             {
@@ -33,11 +38,11 @@ namespace Lesson_27._3
             }
             return true;
         }
-        public static bool IsEven(int number)
+        public  bool IsEven(int number)
         {
             return number % 2 == 0;
         }
-        public static bool IsOdd(int number)
+        public  bool IsOdd(int number)
         {
             return number % 2 != 0;
         }

@@ -72,7 +72,7 @@
             textBoxPassword.Location = new Point(337, 56);
             textBoxPassword.Multiline = true;
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(116, 307);
+            textBoxPassword.Size = new Size(116, 174);
             textBoxPassword.TabIndex = 3;
             // 
             // textBoxLogin
@@ -80,7 +80,7 @@
             textBoxLogin.Location = new Point(211, 56);
             textBoxLogin.Multiline = true;
             textBoxLogin.Name = "textBoxLogin";
-            textBoxLogin.Size = new Size(111, 307);
+            textBoxLogin.Size = new Size(111, 174);
             textBoxLogin.TabIndex = 4;
             // 
             // textBoxUserName
@@ -88,15 +88,15 @@
             textBoxUserName.Location = new Point(20, 56);
             textBoxUserName.Multiline = true;
             textBoxUserName.Name = "textBoxUserName";
-            textBoxUserName.Size = new Size(161, 123);
+            textBoxUserName.Size = new Size(161, 70);
             textBoxUserName.TabIndex = 5;
             // 
             // buttonGenerate
             // 
             buttonGenerate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonGenerate.Location = new Point(22, 217);
+            buttonGenerate.Location = new Point(20, 149);
             buttonGenerate.Name = "buttonGenerate";
-            buttonGenerate.Size = new Size(159, 118);
+            buttonGenerate.Size = new Size(159, 81);
             buttonGenerate.TabIndex = 6;
             buttonGenerate.Text = "СГЕНЕРИРОВАТЬ ПАРОЛЬ";
             buttonGenerate.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(476, 375);
+            ClientSize = new Size(476, 267);
             Controls.Add(buttonGenerate);
             Controls.Add(textBoxUserName);
             Controls.Add(textBoxLogin);

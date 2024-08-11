@@ -9,8 +9,16 @@
 //нечетное, и false в противном случае
 using Lesson_27._3;
 
-    double[]numbers = new double[20];
-    Console.WriteLine("среднее арифметическое: " + Numbers.CalculateAverage(numbers));
-    Console.WriteLine("Число 7 простое? " + Numbers.IsPrime(7));  
-    Console.WriteLine("Число 4 четное? " + Numbers.IsEven(4));  
-    Console.WriteLine("Число 5 нечетное? " + Numbers.IsOdd(5));
+static void Main(string[] args)
+{
+    Numbers numbers = new Numbers();
+    int[] values = { 1, 2, 3, 4, 5 };
+    double average = numbers.CalculateAverage(values);
+    Console.WriteLine($"Среднее арифметическое: {average}");
+    int testNumb = 7;
+    Console.WriteLine($"{testNumb} является простым? {numbers.IsPrime(testNumb)}");
+    int testEven = 4;
+    Console.WriteLine($"{testEven} четное? {numbers.IsEven(testEven)}");
+    int testOdd = 5;
+    Console.WriteLine($"{testOdd} нечетное? {numbers.IsOdd(testOdd)}");
+}
